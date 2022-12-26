@@ -5,13 +5,13 @@ function sendMessage(data) {
     method: 'POST',
     url: `https://graph.facebook.com/${process.env.VERSION}/${process.env.PHONE_NUMBER_ID}/messages`,
     headers: {
-      'Authorization': `Bearer EAALxx2nv6PYBAM7j3H1qNFLpxsgc0UUDm491VAYlys6IynaEjXGAcHsbjnk6aQ50905uBKR6M9LwcCAyC0mCbvbudKytZBpTMyIuWOOnvudtRtqFwl3ZAfca4zaBiN8OJlqHQzZBpIsYwgfCxEbvj6WAtxz1BTGcPIhSksZC3fJnbbI1ZBwo8A0EYCzBVf3XHUctlCuDJnkjeZBcVZCsHgG`,
+      'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
       'Content-Type': 'application/json'
     },
     data: data
   };
 
-  console.log(config);
+  // console.log(config);
 
   return axios(config)
 }
